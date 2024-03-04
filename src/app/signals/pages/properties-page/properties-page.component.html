@@ -1,0 +1,32 @@
+<h1>Update</h1>
+
+<input
+  #txtEmail
+  type="text"
+  name="email"
+  (input)="onFieldUpdated('email', txtEmail.value)"
+  placeholder="Email"
+/>
+<br />
+<input
+  #firstName
+  type="text"
+  name="email"
+  (input)="onFieldUpdated('first_name', firstName.value)"
+  placeholder="Fist name"
+/>
+<br />
+<input
+  #lastName
+  type="text"
+  name="email"
+  (input)="onFieldUpdated('lastName', lastName.value)"
+  placeholder="Last name"
+/>
+
+<pre>
+  {{ user() | json }}
+</pre>
+
+<button (click)="increaseBy(+1)">+1</button>
+<pre>{{ counter() }}</pre>
