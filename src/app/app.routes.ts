@@ -3,11 +3,15 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: 'signals',
-    loadChildren: () =>
-      import('./signals/pages/signals.routes').then((m) => m.routes),
+    loadChildren: () => import('./signals/pages/signals.routes'),
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./dashboard/pages/dashboard.routes'),
   },
   {
     path: '**',
-    redirectTo: 'signals',
+    pathMatch: 'full',
+    redirectTo: '/dashboard',
   },
 ];

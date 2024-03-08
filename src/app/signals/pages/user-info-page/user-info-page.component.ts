@@ -1,6 +1,6 @@
 import { Component, OnInit, computed, inject, signal } from '@angular/core';
 import { Data } from '@angular/router';
-import { UsersService } from '../../services/users.service';
+import { UsersService } from '../../../services/users.service';
 
 @Component({
   selector: 'app-user-info-page',
@@ -9,7 +9,7 @@ import { UsersService } from '../../services/users.service';
   templateUrl: './user-info-page.component.html',
   styleUrl: './user-info-page.component.scss',
 })
-export class UserInfoPageComponent implements OnInit {
+export default class UserInfoPageComponent implements OnInit {
   private usersService = inject(UsersService);
   public userId = signal<number>(1);
   public currentUser = signal<Data>({});

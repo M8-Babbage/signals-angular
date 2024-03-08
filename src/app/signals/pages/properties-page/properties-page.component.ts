@@ -9,7 +9,7 @@ import { Data } from '@angular/router';
   templateUrl: './properties-page.component.html',
   styleUrl: './properties-page.component.scss',
 })
-export class PropertiesPageComponent {
+export default class PropertiesPageComponent {
   public counter = signal<number>(0);
   public user = signal<Data>({
     id: 1,

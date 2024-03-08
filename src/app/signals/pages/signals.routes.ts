@@ -1,20 +1,28 @@
 import { Routes } from '@angular/router';
 import { SignalsLayoutComponent } from '../layout/signals-layout/signals-layout.component';
-import { CounterPageComponent } from './counter-page/counter-page.component';
-import { PropertiesPageComponent } from './properties-page/properties-page.component';
-import { UserInfoPageComponent } from './user-info-page/user-info-page.component';
 
-const routes: Routes = [
+const SIGNALS_ROUTES: Routes = [
   {
     path: '',
     component: SignalsLayoutComponent,
     children: [
-      { path: 'counter', component: CounterPageComponent },
-      { path: 'user-info', component: UserInfoPageComponent },
-      { path: 'properties', component: PropertiesPageComponent },
-      { path: '**', redirectTo: 'counter' },
+      {
+        path: 'counter',
+        loadComponent: () => import('./counter-page/counter-page.component'),
+      },
+      {
+        path: 'user-info',
+        loadComponent: () =>
+          import('./user-info-page/user-info-page.component'),
+      },
+      {
+        path: 'properties',
+        loadComponent: () =>
+          import('./properties-page/properties-page.component'),
+      },
+      { path: '**', redirectTo: 'counter', pathMatch: 'full' },
     ],
   },
 ];
 
-export { routes };
+export default SIGNALS_ROUTES;

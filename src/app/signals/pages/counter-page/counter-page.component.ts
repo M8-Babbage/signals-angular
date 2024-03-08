@@ -13,7 +13,7 @@ import {
   templateUrl: './counter-page.component.html',
   styleUrl: './counter-page.component.scss',
 })
-export class CounterPageComponent {
+export default class CounterPageComponent {
   public counter: WritableSignal<number> = signal<number>(10);
 
   public doubleCount: Signal<number> = computed(() => this.counter() * 2);
